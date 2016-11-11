@@ -3,7 +3,8 @@ import Card from './Card';
 
 const propTypes = {
     title : PropTypes.string.isRequired,
-    cards : PropTypes.arrayOf(PropTypes.object)
+    cards : PropTypes.arrayOf(PropTypes.object),
+    taskCallbacks : PropTypes.object
 };
 
 const defaultProps = {
@@ -16,6 +17,7 @@ class List extends Component {
     render() {
         var cards = this.props.cards.map((card, i) => {
             return (<Card id = {card.id}
+                        taskCallbacks = {this.props.taskCallbacks}
                         title = {card.title}
                         description = {card.description}
                         color = {card.color}

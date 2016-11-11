@@ -15,6 +15,7 @@ let titlePropType = (props, propName, componentName) =>{
 
 const propTypes = {
     id : PropTypes.number,
+    taskCallbacks : PropTypes.object,
     title : titlePropType,
     description : PropTypes.string,
     color : PropTypes.string,
@@ -53,6 +54,7 @@ class Card extends Component {
                 <div className="card__details">
                     <span dangerouslySetInnerHTML = {{__html:marked(this.props.description)}} />
                     <CheckList cardId = {this.props.id}
+                                taskCallbacks = {this.props.taskCallbacks}
                                 tasks = {this.props.tasks}
                                 />
                 </div>
